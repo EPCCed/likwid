@@ -64,6 +64,8 @@ BUILDDAEMON = true#NO SPACE
 # the absolute path to the msr daemon executable.
 ACCESSDAEMON = $(PREFIX)/sbin/likwid-accessD#NO SPACE
 INSTALLED_ACCESSDAEMON = $(INSTALLED_PREFIX)/sbin/likwid-accessD#NO SPACE
+# Set this to true to disallow the access daemon setting MSR/PCI values
+ACCESSDAEMON_DISABLE_WRITE = false#NO SPACE
 
 # Build the setFrequencies daemon to allow users setting the CPU and Uncore
 # frequency

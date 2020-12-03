@@ -44,6 +44,10 @@ CFLAGS    += -std=c99 -fPIC -pie -fPIE -fstack-protector
 ifeq ($(COMPILER),GCCX86)
 CFLAGS    +=  -m32
 endif
+ifeq ($(ACCESSDAEMON_DISABLE_WRITE),true)
+DEFINES += -DACCESSDAEMON_DISABLE_WRITE
+endif
+
 CPPFLAGS :=  $(DEFINES) $(INCLUDES)
 
 ifeq ($(COMPILER),GCCARMv8)

@@ -118,6 +118,12 @@ static PciDevice* pci_devices_daemon = NULL;
 static char pci_filepath[MAX_PATH_LENGTH];
 static int num_pmc_counters = 0;
 
+#ifdef ACCESSDAEMON_DISABLE_WRITE
+static const int fd_open_flag = O_RDONLY;
+#else
+static const int fd_open_flag = O_RDWR;
+#endif
+
 static int clientmem_handle = -1;
 static char *clientmem_addr = NULL;
 static int isClientMem = 0;
